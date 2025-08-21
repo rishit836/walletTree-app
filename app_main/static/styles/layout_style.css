@@ -3,6 +3,7 @@
     --navbar-color:#444185;
     --highlight-color : #FFFCFC;
     --text-color: black;
+    --dashboard-border-color: #322f5f;
 ;
 }
 
@@ -18,42 +19,54 @@ body{
 #sidebar{
     box-sizing: border-box;
     height: 100vh;
-    width: 280px;
-    padding: 5px 1em;
+    width: 200px;
+    padding: 5px 0.5em;
     background-color: var(--navbar-color);
     position: sticky;
     top: 0;
     align-self: start;
     transition: 300ms ease-in-out;
     overflow: hidden;
+    border-right: 1px solid var(--dashboard-border-color);
 }
 
 #sidebar.close{
     padding: 5px;
-    width: 60px;
+    width: 80px;
+}
+
+#sidebar.close .logo span,
+#sidebar.close a span{
+    display: none;
 }
 
 #sidebar.close .logo{
-    display: none;
+    justify-content: center;
 }
 
-#sidebar.close span{
-    display: none;
+#sidebar.close a{
+    justify-content: center;
+    padding: 0.85em 0.25em;
+}
+
+#sidebar.close > ul > li:first-child{
+    justify-content: center;
+}
+
+#sidebar.close #toggle-btn{
+    margin-left: 0;
 }
 #sidebar ul{
     list-style: none;
 }
 #sidebar > ul > li:first-child{
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 50px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
     .logo{
         font-weight: 600;
     }
-}
-
-#sidebar.close > ul > li:first-child{
-    justify-content: center;
 }
 
 #sidebar ul li.active a{
@@ -65,18 +78,13 @@ body{
 }
 #sidebar a, #sidebar .logo{
     border-radius: .5em;
-    padding: .85em 0em;
+    padding: .85em .5em;
     text-decoration: none;
     color: var(--text-color); 
     display: flex;
     align-items: center;
-    gap: 1em;
-}
-
-#sidebar.close a{
-    justify-content: center;
-    padding: .85em .5em;
-    gap: 0;
+    justify-content: flex-start;
+    gap: 0.5em;
 }
 #sidebar img{
     flex-shrink: 0;;
@@ -97,11 +105,6 @@ body{
     background:none;
     cursor: pointer;
 }
-
-#sidebar.close #toggle-btn{
-    margin-left: 0;
-}
-
 #toggle-btn:hover{
     background-color: rgba(255,255,255,.2);
 }
