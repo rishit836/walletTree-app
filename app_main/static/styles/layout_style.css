@@ -9,103 +9,108 @@
 
 body{
     background-color: var(--backgorund-color);
+}
+
+.parent {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
 }
-*{
-    margin: 0px;
-    padding: 0px;
+    
+.sidebar-container {
+    grid-row: span 5 / span 5;
 }
-#sidebar{
-    box-sizing: border-box;
-    height: 100vh;
-    width: 200px;
-    padding: 5px 0.5em;
+
+.infobar-container {
+    grid-column: span 4 / span 4;
+}
+
+.content-container {
+    grid-column: span 4 / span 4;
+    grid-row: span 4 / span 4;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.sidebar-container #sidebar{
+    min-height: 100vh;
     background-color: var(--navbar-color);
-    position: sticky;
-    top: 0;
-    align-self: start;
-    transition: 300ms ease-in-out;
-    overflow: hidden;
-    border-right: 1px solid var(--dashboard-border-color);
 }
-
-#sidebar.close{
-    padding: 5px;
-    width: 80px;
+.sidebar-container #sidebar ul{
+    list-style-type: none;
 }
-
-#sidebar.close .logo span,
-#sidebar.close a span{
-    display: none;
-}
-
-#sidebar.close .logo{
-    justify-content: center;
-}
-
-#sidebar.close a{
-    justify-content: center;
-    padding: 0.85em 0.25em;
-}
-
-#sidebar.close > ul > li:first-child{
-    justify-content: center;
-}
-
-#sidebar.close #toggle-btn{
-    margin-left: 0;
-}
-#sidebar ul{
-    list-style: none;
-}
-#sidebar > ul > li:first-child{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    .logo{
-        font-weight: 600;
-    }
-}
-
-#sidebar ul li.active a{
-    color: var(--highlight-color);
-    img {
-        /* Convert white color (#FFFCFC) to filter */
-        filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7500%) hue-rotate(321deg) brightness(103%) contrast(103%);
-    }
-}
-#sidebar a, #sidebar .logo{
-    border-radius: .5em;
-    padding: .85em .5em;
+.sidebar-container #sidebar ul a{
     text-decoration: none;
-    color: var(--text-color); 
+    color: var(--text-color);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0.5em;
-}
-#sidebar img{
-    flex-shrink: 0;;
-}
-#sidebar a span{
-    flex-grow: 1;
-
-}
-#sidebar a:hover{
-    background-color: rgba(255,255,255,.2);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
-#toggle-btn{
-    margin-left: auto;
-    padding: 1em;
-    border: none;
-    border-radius: .5em;
-    background:none;
-    cursor: pointer;
+.sidebar-container #sidebar ul a:hover{
+    background-color: rgba(255,255,255,0.1);
+    color: var(--highlight-color);
 }
-#toggle-btn:hover{
-    background-color: rgba(255,255,255,.2);
+.sidebar-container #sidebar ul li a span.logo{
+    font-family: forum;
+    font-weight: 800;
+    font-size: 3rem;
+}
+.sidebar-container #sidebar ul li:first-child{
+margin-bottom: 50px;
 }
 
+/* SVG Icon Styles with Background Images */
+.nav-icon {
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.dashboard-icon {
+    background-image: url('../icons/dashboard-icon.svg');
+}
+
+/* You can add more icons like this: */
+.stocks-icon {
+    background-image: url('../icons/stocks-icon.svg');
+}
+
+.transactions-icon {
+    background-image: url('../icons/transactions-icon.svg');
+}
+
+.investments-icon {
+    background-image: url('../icons/investments-icon.svg');
+}
+
+.balance-icon {
+    background-image: url('../icons/balance-icon.svg');
+}
+
+.menu-icon {
+    background-image: url('../icons/menu-icon.svg');
+}
+
+/* Hover effects - you can adjust opacity or add transform effects */
+.nav-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
+/* font import */
+@font-face {
+    font-family: 'forum';
+    src: url('../fonts/Forum.ttf');
+}       
+        
