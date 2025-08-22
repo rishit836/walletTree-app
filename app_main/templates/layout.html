@@ -52,9 +52,15 @@
         </ul>
       </nav>
     </div>
-    <div class="infobar-container">infobar</div>
+    <div class="infobar-container">
+      {% if request.user.is_authenticated %}
+        hi {{request.user.username|lower}}
+      {% else %}
+      please login.
+      {% endif %}
+    </div>
     <div class="content-container">
-      main content
+    
       
 
     {% block body %}

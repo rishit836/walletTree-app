@@ -108,6 +108,12 @@ margin-bottom: 50px;
     transform: scale(1.1);
     opacity: 0.8;
 }
+.content-container{
+    background-color: #322f5f;
+}
+.infobar-container{
+    background-color: aqua;
+}
 
 
 /* font import */
