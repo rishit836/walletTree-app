@@ -14,62 +14,23 @@
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    
-<div class="parent">
-    <div class="sidebar-container">
-      <nav id="sidebar">
-        <ul>
-          <li>
-            <a href="#">
-              <span class="logo">
-                WalletTree
-              </span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <span class="nav-icon dashboard-icon"></span>
-              <span>home</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <span class="nav-icon stocks-icon"></span>
-              <span>stocks</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="nav-icon transactions-icon">
-              </span>
-              <span>transactions</span>
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-    <div class="infobar-container">
-      {% if request.user.is_authenticated %}
-        hi {{request.user.username|lower}}
-      {% else %}
-      please login.
-      {% endif %}
-    </div>
-    <div class="content-container">
-    
-      
-
-    {% block body %}
-        
-    {% endblock %}
+    <div class="layout-container">
+      <div class="navbar-container">
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Transactions</a>
+            </li>
+            <li>
+              <a href="#">stock</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
     </div>
-</div>
-    
-
   </body>
 </html>

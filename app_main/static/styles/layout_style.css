@@ -1,5 +1,5 @@
 :root{
-    --backgorund-color : #FFFCFC;
+    --background-color : #FFFCFC;
     --navbar-color:#444185;
     --highlight-color : #FFFCFC;
     --text-color: black;
@@ -8,117 +8,26 @@
 }
 
 body{
-    background-color: var(--backgorund-color);
+    background-color: var(--background-color);
+    height: 100vh;
 }
 
-.parent {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
-}
-    
-.sidebar-container {
-    grid-row: span 5 / span 5;
-}
 
-.infobar-container {
-    grid-column: span 4 / span 4;
+.layout-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
 }
-
-.content-container {
-    grid-column: span 4 / span 4;
-    grid-row: span 4 / span 4;
-    grid-column-start: 2;
-    grid-row-start: 2;
-}
-
-.sidebar-container #sidebar{
-    min-height: 100vh;
+.navbar-container nav{
+    display: flex;
+    flex-direction: column;
     background-color: var(--navbar-color);
+    width: 220px;;
+    height: 100%;
 }
-.sidebar-container #sidebar ul{
+.navbar-container nav ul{
     list-style-type: none;
 }
-.sidebar-container #sidebar ul a{
-    text-decoration: none;
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
 
-
-.sidebar-container #sidebar ul li:not(:first-child) a:hover{
-    background-color: rgba(255,255,255,0.1);
-    color: var(--highlight-color);
-}
-
-.sidebar-container #sidebar ul li a span.logo{
-    font-family: forum;
-    font-weight: 800;
-    font-size: 3rem;
-}
-.sidebar-container #sidebar ul li:first-child{
-margin-bottom: 50px;
-}
-
-/* SVG Icon Styles with Background Images */
-.nav-icon {
-    width: 25px;
-    height: 25px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    flex-shrink: 0;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.dashboard-icon {
-    background-image: url('../icons/dashboard-icon.svg');
-}
-
-/* You can add more icons like this: */
-.stocks-icon {
-    background-image: url('../icons/stocks-icon.svg');
-}
-
-.transactions-icon {
-    background-image: url('../icons/transactions-icon.svg');
-}
-
-.investments-icon {
-    background-image: url('../icons/investments-icon.svg');
-}
-
-.balance-icon {
-    background-image: url('../icons/balance-icon.svg');
-}
-
-.menu-icon {
-    background-image: url('../icons/menu-icon.svg');
-}
-
-/* Hover effects - you can adjust opacity or add transform effects */
-.nav-icon:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-.content-container{
-    background-color: #322f5f;
-}
-.infobar-container{
-    background-color: aqua;
-}
-
-
-/* font import */
-@font-face {
-    font-family: 'forum';
-    src: url('../fonts/Forum.ttf');
-}       
         
