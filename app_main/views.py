@@ -12,10 +12,15 @@ def login_view(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
         
-        u = authenticate(request,username=username,password=password)
-        if u is not None:
-            login(request,u)
-            print("login was succesful")
-            messages.success(request,"welcome " + str(u.username)+",login was succesful.")
-
-    return render(request,'login.html')
+        # Use authenticate() to check credentials properly
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            print("login was successful")
+            messages.success(request, f"Welcome {user.username}, login was successful.")
+            return redirect('main:home')  # Redirect after successful login
+        else:
+            messages.error(request, "Invalid username or password.")
+    
+    return render(request, 'login.html')

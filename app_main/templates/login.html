@@ -10,8 +10,11 @@
 
 {% block body %}
     <div class="content-container">
+        <!-- Display Django Messages -->
+
+
         <form action="{% url 'main:login' %}" method="POST">
-            {%csrf_token%}
+            {% csrf_token %}
             <div class="title">
                 <h2>
                     login
@@ -23,6 +26,15 @@
             <input type="password" name="password">
 
             <button type="submit">submit</button>
+                    {% if messages %}
+            <div class="messages-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         </form>
     </div>
 {% endblock %}
