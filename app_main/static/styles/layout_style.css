@@ -40,7 +40,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap:20px;
+    /* gap:20px; */
     list-style-type: none;
     margin: 0; /* Remove default margins */
     padding: 0; /* Remove default padding */
@@ -48,8 +48,7 @@ body{
 }
 
 .navbar-container ul li:first-child{
-    margin-top: 15px;
-    margin-bottom: 60px;;
+    margin-bottom: 150px;;
     justify-content: center;
     margin: auto;
     margin-top: 15px;;
@@ -73,10 +72,15 @@ body{
     align-items: center;
     justify-content: center;
     gap: 10px;
+    padding: 15px 0px;
 }
 
 .navbar-container ul li:not(:first-child) a:hover{
     color: var(--highlight-color);
+    background-color: rgba(0,0,0,.5);
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;;
     svg{
     fill: var(--highlight-color);
     }
