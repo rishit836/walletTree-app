@@ -1,33 +1,86 @@
 :root{
-    --background-color : #FFFCFC;
-    --navbar-color:#444185;
-    --highlight-color : #FFFCFC;
+    --background-color : #FFFFFF; /* Change to pure white */
+    --navbar-color:#322f5f;
     --text-color: black;
-    --dashboard-border-color: #322f5f;
-;
+    --logo-color: #0A1653;
+    --highlight-color:#4A4E69;
+    
 }
 
 body{
     background-color: var(--background-color);
     height: 100vh;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
 }
-
 
 .layout-container{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Change to nowrap */
+    height: 100vh; /* Use viewport height */
+    width: 100vw; /* Use full viewport width */
+    background-color: var(--background-color);
+}
+
+.navbar-container{
+    width: 220px; /* Move width to container */
     height: 100%;
 }
+
 .navbar-container nav{
     display: flex;
     flex-direction: column;
     background-color: var(--navbar-color);
-    width: 220px;;
+    width: 100%; /* Take full container width */
     height: 100%;
 }
-.navbar-container nav ul{
+
+.navbar-container ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:20px;
     list-style-type: none;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    /* align-items: right; */
 }
 
-        
+.navbar-container ul li:first-child{
+    margin-top: 15px;
+    margin-bottom: 60px;;
+    justify-content: center;
+    margin: auto;
+    margin-top: 15px;;
+    font-size: 1.8rem;;
+    a{
+        color: var(--logo-color);
+        letter-spacing: 7px;;
+
+    }
+
+}
+.navbar-container ul li a{
+    text-decoration:  none;
+    color:  white;
+}
+
+.navbar-container ul li:not(:first-child) a{
+    text-decoration: none;
+    margin-right: 30px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navbar-container ul li:not(:first-child) a:hover{
+    color: var(--highlight-color);
+    svg{
+    fill: var(--highlight-color);
+    }
+}
+.navbar-container ul li:not(:first-child) a svg{
+    fill: var(--text-color);
+}
