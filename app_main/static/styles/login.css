@@ -1,0 +1,126 @@
+:root{
+    --form-background-color: #4A4E69;
+    --input-color:#3b3b3b;
+    --button-color:#22223b;
+    --button-highlight-color:#81d7bb;
+    --error-bg:#7c3c42;
+    --success-bg:#6dfacd;
+    --signup-bg:#f7f8ff;
+    --hover-color:#4a4e69;
+}
+
+.content-container, .content-container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.content-container form{
+    width: 50%;
+    padding: 50px 50px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--form-background-color);
+}
+.content-container form .title h2{
+    letter-spacing: 7px;
+    margin-bottom:30px;
+    background-color: rgba(0,0,0,.4);
+    border: none;
+    border-radius: 8px;;
+    padding: 5px 5px;
+    text-align: center;
+}
+.content-container form .title h2 a:not(#active){
+        text-align: center;
+        width: 100%;
+        text-decoration: none;
+        color: white;
+}
+.content-container form .title h2 a#active{
+    color: white;
+}
+.content-container form .title h2 a:hover{
+        color: var(--hover-color);
+
+}
+.content-container form input{
+    margin-top: 20px;;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--input-color);
+    text-align: center;
+    color:white;
+    min-width: 200px;
+    width: auto;
+    transition: all .4s;;
+    max-width: fit-content;
+}
+.content-container form input:hover{
+    min-width: 230px;
+    transform: scale(1.01);
+
+}
+.content-container form label{
+    font-size: 1.5rem;;
+    font-weight: 100;;
+    letter-spacing: 2px;
+}
+.content-container form button{
+    border: none;
+    width: 70px;
+    background-color: var(--button-color);
+    color: white;
+    border-radius: 9px;
+    transition: all .25s ease-in-out;;
+}
+.content-container form button:hover{
+    width: 100px;
+    background-color: var(--button-highlight-color);
+}
+
+/* Django Messages Styling */
+.messages-container {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.messages-container .error{
+    background-color: var(--error-bg);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 5px 5px;
+}
+.messages-container .success{
+    background-color: var(--success-bg);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 5px 5px;
+}
+
+.signup-container{
+    display: flex;
+    width: 50%;
+    background-color: var(--signup-bg);
+    border: none;
+    border-radius: 9px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 3px;;
+}
+.signup-container a{
+    text-decoration: none;
+
+}
