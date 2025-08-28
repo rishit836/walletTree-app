@@ -1,10 +1,8 @@
 from django.shortcuts import render,redirect,HttpResponse
-<<<<<<< HEAD
 
-# Create your views here.
-def home(request):
-    return render(request, "layout.html")
-=======
+from django.contrib.auth.models import User
+from django.contrib.auth import login,authenticate,logout
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate,logout
 from django.contrib import messages
@@ -51,4 +49,3 @@ def logout_view(request):
     logout(request)
     messages.success(request,"you have been succesfully logged out")
     return redirect("main:login")
->>>>>>> 290a52e (decluttered signup and login page and now backend works)
