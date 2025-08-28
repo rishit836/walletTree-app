@@ -1,8 +1,9 @@
 :root{
-    --background-color : #FFFFFF; /* Change to pure white */
+    --background-color : #F2E9E4; /* Change to pure white */
     --navbar-color:#322f5f;
     --text-color: black;
-    --logo-color: #0A1653;
+    /* --logo-color: #0A1653; */
+    --logo-color:white;
     --highlight-color:#4A4E69;
     
 }
@@ -74,6 +75,9 @@ body{
     justify-content: center;
     gap: 10px;
     padding: 15px 0px;
+    svg{
+        fill :var(--text-color)
+    }
 }
 
 .navbar-container ul li:not(:first-child) a:hover{
@@ -86,9 +90,7 @@ body{
     fill: var(--highlight-color);
     }
 }
-.navbar-container ul li:not(:first-child) a svg{
-    fill: var(--text-color);
-}
+
 .navbar-container ul li:last-child{
     margin-top: 65dvh;
 }

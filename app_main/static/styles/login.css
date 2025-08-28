@@ -1,12 +1,13 @@
 :root{
     --form-background-color: #4A4E69;
-    --input-color:#3b3b3b;
+    /* --input-color:#3b3b3b; */
+    --input-color:white;
     --button-color:#22223b;
     --button-highlight-color:#81d7bb;
     --error-bg:#7c3c42;
     --success-bg:#6dfacd;
     --signup-bg:#f7f8ff;
-    --hover-color:#4a4e69;
+    --hover-color:white;
 }
 
 .content-container, .content-container form{
@@ -34,18 +35,20 @@
     text-align: center;
 }
 .content-container form .title h2 a:not(#active){
-        text-align: center;
-        width: 100%;
-        text-decoration: none;
-        color: white;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+    transition: all .3s;
 }
 .content-container form .title h2 a#active{
     color: white;
+    text-decoration: none;
     
 }
 
-.content-container form .title h2 a:hover{
-        color: var(--hover-color);
+.content-container form .title h2 a:not(#active):hover {
+    color: var(--hover-color);
 }
 
 .content-container form input{
@@ -55,11 +58,12 @@
     border-radius: 30px;
     background-color: var(--input-color);
     text-align: center;
-    color:white;
+    color:black;
     min-width: 200px;
     width: auto;
     transition: all .4s;;
     max-width: fit-content;
+    letter-spacing: 1px;
 }
 .content-container form input:hover{
     min-width: 230px;
@@ -70,6 +74,7 @@
     font-size: 1.5rem;;
     font-weight: 100;;
     letter-spacing: 2px;
+    color: white;
 }
 .content-container form button{
     border: none;
