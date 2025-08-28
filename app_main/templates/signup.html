@@ -2,8 +2,6 @@
 {% load static %}
 {% block header %}
     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/singup.css' %}">
-
 
 {% endblock %}
 {% block pagename %}
@@ -15,13 +13,15 @@
 
 
 
-        <form action="{% url 'main:login' %}" method="POST">
+        <form action="{% url 'main:signup' %}" method="POST">
             {% csrf_token %}
             <div class="title">
-                <h2><a href="{% url 'main:login' %}" id="active">login</a> | <a href="{% url 'main:signup' %}">signup</a></h2>
+                <h2><a href="{% url 'main:login' %}" >login</a> | <a href="{% url 'main:signup' %}" id="active">signup</a></h2>
             </div>
             <label for="username">username</label>
             <input type="text" name="username">
+            <label for="username">email</label>
+            <input type="email" name="email">
             <label for="password">password</label>
             <input type="password" name="password">
 
@@ -35,7 +35,6 @@
                 {% endfor %}
             </div>
         {% endif %}
-
 
         </form>
     </div>

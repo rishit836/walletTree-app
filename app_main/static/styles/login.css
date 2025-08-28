@@ -3,6 +3,10 @@
     --input-color:#3b3b3b;
     --button-color:#22223b;
     --button-highlight-color:#81d7bb;
+    --error-bg:#7c3c42;
+    --success-bg:#6dfacd;
+    --signup-bg:#f7f8ff;
+    --hover-color:#4a4e69;
 }
 
 .content-container, .content-container form{
@@ -21,8 +25,26 @@
     background-color: var(--form-background-color);
 }
 .content-container form .title h2{
-    letter-spacing: 8px;
-    margin-bottom: 50px;
+    letter-spacing: 7px;
+    margin-bottom:30px;
+    background-color: rgba(0,0,0,.4);
+    border: none;
+    border-radius: 8px;;
+    padding: 5px 5px;
+    text-align: center;
+}
+.content-container form .title h2 a:not(#active){
+        text-align: center;
+        width: 100%;
+        text-decoration: none;
+        color: white;
+}
+.content-container form .title h2 a#active{
+    color: white;
+}
+.content-container form .title h2 a:hover{
+        color: var(--hover-color);
+
 }
 .content-container form input{
     margin-top: 20px;;
@@ -32,8 +54,14 @@
     background-color: var(--input-color);
     text-align: center;
     color:white;
-    
-    width: 200px;
+    min-width: 200px;
+    width: auto;
+    transition: all .4s;;
+    max-width: fit-content;
+}
+.content-container form input:hover{
+    min-width: 230px;
+    transform: scale(1.01);
 
 }
 .content-container form label{
@@ -56,38 +84,43 @@
 
 /* Django Messages Styling */
 .messages-container {
-    width: 100%;
+    width: 50%;
     margin-bottom: 20px;
-}
-
-.alert {
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    font-weight: 500;
+    margin-top: 20px;
     text-align: center;
+
 }
 
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+.messages-container .error{
+    background-color: var(--error-bg);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 5px 5px;
+}
+.messages-container .success{
+    background-color: var(--success-bg);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 5px 5px;
 }
 
-.alert-error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+.signup-container{
+    display: flex;
+    width: 50%;
+    background-color: var(--signup-bg);
+    border: none;
+    border-radius: 9px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 3px;;
 }
+.signup-container a{
+    text-decoration: none;
 
-.alert-warning {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeaa7;
-}
-
-.alert-info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-    border: 1px solid #bee5eb;
 }

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import login,authenticate
+from django.contrib.auth import login,authenticate,logout
 from django.contrib import messages
 
 # Create your views here.
@@ -24,3 +24,24 @@ def login_view(request):
             messages.error(request, "Invalid username or password.")
     
     return render(request, 'login.html')
+
+def signup_view(request):
+    if request.method == "POST":
+        try:
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+            email = request.POST.get("email")
+            u = User.objects.create_user(username=username,email=email,password=password)
+            u.save()
+            messages.success(request,"welcome to wallettree, pls login.")
+        except Exception as e:
+            messages.error(request,e)
+
+
+        return redirect("main:login")
+    return render(request,"signup.html")
+
+def logout_view(request):
+    logout(request)
+    messages.success(request,"you have been succesfully logged out")
+    return redirect("main:login")
