@@ -53,6 +53,7 @@ body{
     margin: auto;
     margin-top: 15px;;
     font-size: 1.8rem;;
+    font-family: 'Forum';
     a{
         color: var(--logo-color);
         letter-spacing: 7px;;
@@ -92,3 +93,7 @@ body{
     margin-top: 65dvh;
 }
 
+@font-face {
+    font-family: 'Forum';
+    src: url('../fonts/Forum.ttf') format('truetype');
+}

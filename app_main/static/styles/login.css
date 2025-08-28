@@ -41,11 +41,13 @@
 }
 .content-container form .title h2 a#active{
     color: white;
+    
 }
+
 .content-container form .title h2 a:hover{
         color: var(--hover-color);
-
 }
+
 .content-container form input{
     margin-top: 20px;;
     margin-bottom: 20px;
