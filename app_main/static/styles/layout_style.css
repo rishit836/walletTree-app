@@ -92,3 +92,8 @@ body{
 .navbar-container.user-guest ul li:last-child {
     margin-top: 65dvh;
 }
+
+@font-face {
+    font-family: 'Forum';
+    src: url('../fonts/Forum.ttf') format('truetype');
+}
