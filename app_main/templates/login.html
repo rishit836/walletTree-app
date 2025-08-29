@@ -18,7 +18,9 @@
         <form action="{% url 'main:login' %}" method="POST">
             {% csrf_token %}
             <div class="title">
-                <h2><a href="{% url 'main:login' %}" id="active">login</a> | <a href="{% url 'main:signup' %}">signup</a></h2>
+                <h2>
+                    <a href="{% url 'main:login' %}" id="active">login</a> | <a href="{% url 'main:signup' %}">signup</a>
+                </h2>
             </div>
             <label for="username">username</label>
             <input type="text" name="username">

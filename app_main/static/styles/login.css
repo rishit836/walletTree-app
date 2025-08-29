@@ -5,7 +5,7 @@
     --button-color:#22223b;
     --button-highlight-color:#81d7bb;
     --error-bg:#7c3c42;
-    --success-bg:#6dfacd;
+    --success-bg:#688bf6;
     --signup-bg:#f7f8ff;
     --hover-color:white;
 }
@@ -100,17 +100,23 @@
 
 .messages-container .error{
     background-color: var(--error-bg);
-    color: white;
+    color: #f1f1e6;
     border: none;
     border-radius: 9px;
     padding: 5px 5px;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 .messages-container .success{
     background-color: var(--success-bg);
-    color: white;
+    color: #f1f1e6;
     border: none;
     border-radius: 9px;
     padding: 5px 5px;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .signup-container{
@@ -125,7 +131,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    letter-spacing: 3px;;
+
 }
 .signup-container a{
     text-decoration: none;

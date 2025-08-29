@@ -1,11 +1,33 @@
 {% extends 'layout.html' %}
-{%load static%}
+{% load static %}
 {% block header %}
-    <link rel="stylesheet" href="{% static 'home.css'' %}">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+    <script src="{%static 'scripts/home.js'%}" defer></script>
 {% endblock %}
 {% block pagename %}
     home
 {% endblock %}
 {% block body %}
+<div class="page-container">
     
+    <div class="news-container">
+        <div class="news-card"></div>
+        <div class="news-card"></div>
+        <div class="news-card"></div>
+        <div class="news-card"></div>
+        <div class="news-card"></div>
+    </div>
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+        <div class="message {{message.tags}}">
+            {{message}}
+        </div>
+            
+        {% endfor %}
+    </div>
+    {%endif%}
+
+</div>
+
 {% endblock %}
